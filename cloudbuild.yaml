@@ -1,6 +1,6 @@
 steps:
 - name: gcr.io/cloud-builders/git
-  args: ['clone', 'https://github.com/svenmueller/gcbapp-example']
+  args: ['clone', 'git@github.com:svenmueller/gcbapp-example.git']
   dir: 'git'
 - name: 'netroby/ubuntu-git'
   args: ['bash', './script.sh']
