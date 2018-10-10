@@ -1,5 +1,6 @@
 steps:
 - name: gcr.io/cloud-builders/git
   args: ['clone', 'https://github.com/svenmueller/gcbapp-example']
+  dir: 'gcbapp-example'
 - name: 'ubuntu'
   args: ['bash', './script.sh']
