@@ -1,3 +1,4 @@
 #!/bin/sh
 ls -lha
-ls -lha gcbapp-example
+cd gcbapp-example
+ls -lha
