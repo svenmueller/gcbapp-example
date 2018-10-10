@@ -1,3 +1,7 @@
 steps:
 - name: gcr.io/cloud-builders/git
   args: ['clone', 'https://github.com/svenmueller/gcbapp-example']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-f', 'Dockerfile.ubuntu-curl', '-t', 'script-runner', '.']
+- name: 'script-runner'
+  args: ['bash', './script.sh']
