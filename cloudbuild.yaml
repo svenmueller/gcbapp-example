@@ -2,5 +2,5 @@ steps:
 - name: gcr.io/cloud-builders/git
   args: ['clone', 'https://github.com/svenmueller/gcbapp-example']
   dir: 'git'
-- name: 'mugen/ubuntu-git'
+- name: 'netroby/ubuntu-git'
   args: ['bash', './script.sh']
