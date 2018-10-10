@@ -1,2 +1,3 @@
 #!/bin/sh
-echo "Hello, world! The time is $(date)."
+ls -lha workspace
+ls -lha workspace/gcbapp-example
