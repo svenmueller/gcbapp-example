@@ -1,4 +1,4 @@
 #!/bin/sh
 ls -lha
-cd gcbapp-example
+cd git/gcbapp-example
 ls -lha
