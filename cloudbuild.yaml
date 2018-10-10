@@ -1,6 +1,18 @@
 steps:
+#- name: gcr.io/cloud-builders/git
+#  args: ['clone', 'https://github.com/svenmueller/gcbapp-example']
+#  dir: 'git'
+
+# Get all branches, needed to do version checks, diffs and so on
 - name: gcr.io/cloud-builders/git
-  args: ['clone', 'https://github.com/svenmueller/gcbapp-example']
-  dir: 'git'
+  args: ['fetch', '--unshallow', '']
+  dir: 'git/gcbapp-example'
+
+# Check if branch is up2date with the master branch
+- name: gcr.io/cloud-builders/git
+  args: ['-c', 'git rev-list --left-right --count origin/master...HEAD | egrep "^0" || ( echo "Pull changes from master to your branch" && exit 1 )']
+  entrypoint: /bin/bash
+  dir: 'git/gcbapp-example'
+
 - name: 'netroby/ubuntu-git'
   args: ['bash', './script.sh']
