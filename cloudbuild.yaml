@@ -5,7 +5,7 @@ steps:
 
 # Get all branches, needed to do version checks, diffs and so on
 - name: gcr.io/cloud-builders/git
-  args: ['fetch', '--unshallow', '']
+  args: ['fetch', '--unshallow']
   dir: 'git/gcbapp-example'
 
 # Check if branch is up2date with the master branch
